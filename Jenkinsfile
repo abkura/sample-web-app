@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                bat(/"%MVN_HOME%\bin\mvn" --version/)
+                def mvnHome = tool 'M3'
+                bat "\"${mvnHome}\"\\bin\\mvn --version"
             }
         }
     }
