@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                call 'mvn --version'
+                bat(/"%MVN_HOME%\bin\mvn" --version/)
             }
         }
     }
